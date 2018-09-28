@@ -1,0 +1,48 @@
+<!--pages/setUploadState/setUploadState.wxml-->
+<view class="container">
+  <form class="user_box" bindsubmit='handleSubmit'>
+    <view class="company">
+      <view class="company_item">
+        <text>加密等级</text>
+        <radio-group class="radio-group" bindchange="radioChange" name="level">
+          <label class="radio">
+            <radio value="0" checked="{{userState.Level==0}}" /> 加密
+          </label>
+          <label class="radio">
+            <radio value="1" checked="{{userState.Level==1}}" /> 普通
+          </label>
+        </radio-group>
+      </view>
+      <view class="company_item">
+        <text>合作状态</text>
+        <radio-group class="radio-group" bindchange="radioChange" name="partner">
+          <label class="radio">
+            <radio value="1" checked="{{userState.State==1}}" /> 启用
+          </label>
+          <label class="radio">
+            <radio value="0" checked="{{userState.State==0}}" /> 禁止
+          </label>
+        </radio-group>
+      </view>
+    </view>
+    <view class="user" wx:for="{{userList}}" wx:key="{{item.Id}}">
+      <view>
+        <view>
+          <text>姓名：</text>
+          <text>{{item.UserName}}</text>
+        </view>
+        <view>
+          <text>备注：</text>
+          <text>{{item.Remark}}</text>
+        </view>
+      </view>
+      <view>
+        <view>能否打开文件</view>
+        <switch checked="{{item.IsChecked}}" bindchange="handlechange" data-id="{{item.Id}}"  name="touser{{index}}"></switch>
+      </view>
+    </view>
+    <view>
+      <button form-type='submit' class="submit_btn">确定</button>
+    </view>
+  </form>
+</view>

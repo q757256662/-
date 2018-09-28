@@ -1,0 +1,61 @@
+/* pages/userManager/userManager.wxss */
+
+.search_box{
+  border:1px solid #ddd;
+  width: 100%;
+  font-size: 30rpx;
+  height:80rpx;
+  display: flex;
+  align-items: center;
+}
+
+
+.search_box input{
+  display: inline-block;
+  vertical-align: middle;
+  width:90%;
+}
+
+.list_box{
+  border:1px solid #ccc;
+  width:100%;
+  background: #eee;
+}
+
+.user_box{
+  display: flex;
+  justify-content: space-between;
+  margin:20rpx 20rpx 0;
+  border:1px solid #ccc;
+  background: #fff;
+  padding: 30rpx;
+  font-size: 28rpx;
+  align-items: center;
+  border-radius: 15rpx;
+  border-left:20rpx solid #20AA39;
+}
+
+.user_base view{
+  width:250rpx;
+}
+
+.icon_btn {
+  padding:10rpx 0;
+  transform: scale(2)
+}
+
+.add_user{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  border:1px solid #ccc;
+  background: #fff;
+  padding: 30rpx;
+  border-radius: 15rpx;
+  margin:20rpx 20rpx 0;
+}
+
+.add_user image{
+  margin-right:50rpx;
+  transform: scale(1.2)
+}

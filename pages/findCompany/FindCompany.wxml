@@ -1,0 +1,17 @@
+<!--pages/FindCompany/FindCompany.wxml-->
+<view class="container">
+  <view class="search_company">
+    <image class="icon" src="../../images/search.png"></image>
+    <input placeholder='请输入公司名、地址关键字或锁号' bindinput='handleInput' bindblur='handleFilter'></input>
+  </view>
+    <view class="companies_box">
+      <view class="show_company" wx:for="{{userList}}" wx:key="{{item.Id}}">
+        <view>
+          <text>公司名:</text>
+          <text>{{item.Name}}</text>
+        </view>
+        <button size="mini" data-id="{{item.Id}}" type="primary" bindtap='handleAdd'>添加</button>
+        <!-- <image class="icon" src="../../images/ADD.png"></image> -->
+      </view>
+    </view>
+</view>

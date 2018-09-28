@@ -1,0 +1,52 @@
+<!--pages/userManager/userManager.wxml-->
+<view class="container">
+<!-- 搜索框 -->
+  <view class="search_box">
+    <image class="icon" src="../../images/search.png"></image>
+    <input placeholder='请输入查询的员工名或者手机号' bindblur='handleSearch'></input>
+  </view>
+  <scroll-view class="list_box">
+    <navigator class="add_user" url="../addUser/addUser">
+        <image class="icon" src="../../images/ADD.png"></image>
+        <text>添加员工</text>
+    </navigator>
+    <view class="user_box" wx:for="{{userList}}" wx:key="{{item.Id}}" >
+    <view class="green_color"></view>
+      <view class="user_base">
+        <view>
+          <text>用户名：</text>
+          <text>{{item.UserName}}</text>
+        </view>
+        <view>
+          <text>MAC：</text>
+          <text>{{item.MAC}}</text>
+        </view>
+        <view>
+          <text>手机：</text>
+          <text>{{item.Phone}}</text>
+        </view>
+        <view>
+          <text>备注：</text>
+          <text>{{item.Remark}}</text>
+        </view>
+      </view>
+      <view class="user_attr">
+        <view>
+          <text>状态：</text>
+          <text>{{item.State?'启用':'禁止'}}</text>
+        </view>
+        <view>
+          <text>上传权限：</text>
+          <text>{{item.Up?'有':'无'}}</text>
+        </view>
+        <view>
+          <text>接收权限：</text>
+          <text>{{item.Down?'有':'无'}}</text>
+        </view>
+      </view>
+      <view>
+        <image class="icon icon_btn" src="../../images/green_edit.png" data-Item="{{item}}" data-index="{{index}}" bindtap='handleEdit'></image>
+      </view>
+    </view>
+  </scroll-view>
+</view>

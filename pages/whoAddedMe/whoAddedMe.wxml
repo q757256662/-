@@ -1,0 +1,24 @@
+<!--pages/whoAddedMe/whoAddedMe.wxml-->
+<view class="container">
+  <scroll-view class="company_box">
+    <view class="company_detali" wx:for="{{userList}}" wx:key="{{item.CompanyId}}">
+      <view>
+        <view class="company_name" style="font-weight:bold;font-size:30rpx">
+        <text class="iconfont icon-user"></text>
+        <text>公司名称：</text><text>{{item.CompanyName}}</text>
+      </view>
+      <view class="open_user">
+        <text>能打开的员工：</text>
+          <text>{{item.CanOpenUser}}</text>
+        </view>
+      <view class="accept_user">
+        <text>能接收的员工：</text>
+        <text>{{item.Receiver}}</text>
+      </view>
+      </view>
+      <view>
+        <image class="icon icon_btn" src="../../images/green_edit.png" data-Item="{{item}}" data-index="{{index}}" bindtap='handleTo'></image>
+      </view>
+    </view>
+  </scroll-view>
+</view>

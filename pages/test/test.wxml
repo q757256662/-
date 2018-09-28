@@ -1,0 +1,6 @@
+<view>
+  <form report-submit="{{true}}" bindsubmit="handleSendMsg">
+    <button form-type='submit'>提交表单</button>
+    <button bindtap='handleTo'>跳转</button>
+  </form>
+</view>

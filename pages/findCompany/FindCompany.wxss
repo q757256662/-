@@ -1,0 +1,48 @@
+/* pages/FindCompany/FindCompany.wxss */
+.search_company{
+  border:1px solid #ddd;
+  width: 100%;
+  font-size: 30rpx;
+  height:80rpx;
+  display: flex;
+  align-items: center;
+  background: #fff;
+}
+
+.search_company input{
+  display: inline-block;
+  vertical-align: middle;
+  width:90%;
+}
+
+.search_company button{
+}
+
+.show_company{
+  font-size:28rpx;
+  margin:15rpx auto;
+  border-bottom:1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border-radius: 15rpx;
+  padding:30rpx;
+  width:85%;
+  line-height: 1.5;
+  border-left:20rpx solid #20AA39;
+}
+
+.show_company button{
+  margin: 0;
+}
+
+.companies_box{
+  margin-top:20rpx;
+  width: 100%;
+  background: #eee;
+}
+
+page{
+  background: #eee;
+}

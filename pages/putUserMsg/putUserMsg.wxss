@@ -1,0 +1,45 @@
+/* pages/putUserMsg/putUserMsg.wxss */
+.setting_box{
+  width:100%;
+  background:#fff;
+  border-radius: 30rpx;
+  padding:20rpx;
+  height:80vh;
+}
+
+page{
+  background:#f1f0f5;
+}
+
+.container{
+  background:#f1f0f5;
+  padding:30rpx 40rpx;
+}
+
+.username{
+  margin:30rpx 0;
+  color:#000;
+  display: flex;
+  justify-content: space-between;
+}
+
+.username label{
+  color:#888;
+  width:150rpx;
+}
+
+.input_box{
+  text-align: right;
+}
+button{
+  display: block;
+  margin-top:50rpx;
+}
+
+.backToUp{
+  color:#fff;
+}
+
+.username{
+  border-bottom:1px solid #eee;
+}

@@ -1,0 +1,81 @@
+/* pages/iSendWho/iSendWho.wxss */
+
+.search_box{
+  margin-bottom:20rpx;
+}
+
+page{
+  background:#eee;
+}
+
+.search_inner{
+  width:50%;
+  border:1px solid #ccc;
+  margin-left:20rpx;
+}
+
+.search_button{
+  margin:0 20rpx;
+}
+
+.company_box{
+  width: 95%;
+  background:#eee;
+}
+
+.company_show{
+  font-size:28rpx;
+  margin:15rpx auto;
+  border-bottom:1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  background: #fff;
+  border-radius: 15rpx;
+  padding:30rpx;
+  width:85%;
+  line-height: 1.5;
+  border-left:20rpx solid #20AA39;
+}
+
+.company_view{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.company_base{
+  width:50%;
+}
+
+.picker_group {
+  margin-top:50rpx;
+  height: 85rpx;
+  line-height: 85rpx;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  color: #888;
+  border-bottom: 1rpx solid #efefef;
+
+}
+
+.picker_group picker {
+  /* background-color: yellow; */
+  width:250rpx;
+  color: #20AA39;
+  height: 55rpx;
+  line-height: 55rpx;
+  margin: 0 2%;
+  padding: 0 2%;
+  border: 1px solid #20AA39;
+  border-radius: 30rpx;
+  text-align: center;
+}
+
+.icon_btn {
+  padding:10rpx 0;
+  transform: scale(2)
+}

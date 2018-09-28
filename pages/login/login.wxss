@@ -1,0 +1,63 @@
+/* pages/login/login.wxss */
+.container{
+}
+
+.login_header{
+  width:100%;
+  background: #fff;
+  text-align: center;
+}
+
+.body_container{
+  width:100%;
+  margin-top:50rpx;
+}
+
+.login_button{
+  margin-top:200rpx;
+  width:90%;
+}
+
+
+.bindPhone{
+  height:50rpx;
+  width:200rpx;
+  background-color: #CCE6F9;
+  color: #333;
+  vertical-align: middle;
+}
+
+.wx_phone_login{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  height:120rpx;
+}
+
+.body_input text{
+  width:100rpx;
+}
+
+.body_input input{
+  margin:20rpx 50rpx;
+  line-height:2;
+}
+
+.wx_password_login{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  height:120rpx;
+}
+
+.body_input image{
+  margin-left:50rpx;
+  transform:scale(1.5);
+}
+
+.body_input text{
+  margin-left:10rpx;
+}

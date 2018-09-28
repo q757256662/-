@@ -1,0 +1,24 @@
+<!--pages/login/login.wxml-->
+<view class="container">
+  <view class="login_header">
+    <image class="header_logo" src="../../images/logo.png" mode="aspectFit"></image>
+  </view>
+  <view class="body_container">
+    <view>
+      <view class="body_input">
+        <view class="wx_phone_login">
+          <!-- <text class="iconfont icon-user"></text> -->
+          <image class="icon" src="../../images/user.png"></image>
+          <text>手机号</text>
+          <input placeholder='请输入你的手机号' name="username" bindinput='handleInputUser' maxlength="11" ></input>
+        </view>
+        <view class="wx_password_login">
+          <image class="icon" src="../../images/password.png"></image>
+          <text decode="{{true}}">密&emsp;码</text>
+          <input placeholder='请输入你的密码' name="password" password='true' bindinput='handleInputUpwd'></input>
+        </view>
+      </view>
+      <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class="login_button">授权登录</button>
+    </view>
+  </view>
+</view>

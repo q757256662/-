@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/test/test",
+    "pages/dashboard/dashboard",
+    "pages/acceptUploadState/acceptUploadState",
+    "pages/setUploadState/setUploadState",
+    "pages/iSendWho/iSendWho",
+    "pages/findCompany/FindCompany",
+    "pages/whoAddedMe/whoAddedMe",
+    "pages/putUserMsg/putUserMsg",
+    "pages/userManager/userManager",
+    "pages/Cooperativepartner/Cooperativepartner",
+    "pages/addUser/addUser",
+    "pages/out/out"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#eee"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "iconPath": "./images/customer.png",
+        "selectedIconPath": "./images/customer1.png",
+        "pagePath": "pages/Cooperativepartner/Cooperativepartner",
+        "text": "合作伙伴"
+      },
+      {
+        "iconPath": "./images/userinfo.png",
+        "selectedIconPath": "./images/userinfo1.png",
+        "pagePath": "pages/userManager/userManager",
+        "text": "员工管理"
+      },
+      {
+        "iconPath": "./images/accout.png",
+        "selectedIconPath": "./images/accout1.png",
+        "pagePath": "pages/dashboard/dashboard",
+        "text": "个人信息"
+      }
+    ]
+  }
+}

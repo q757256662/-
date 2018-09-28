@@ -1,0 +1,22 @@
+<!--pages/acceptUploadState/acceptUploadState.wxml-->
+<view class="container">
+  <form class="user_box" bindsubmit='handleSubmit'>
+    <view class="user" wx:for="{{userList}}" wx:key="{{item.Id}}">
+      <view>
+        <view>
+          <text>姓名：</text>
+          <text>{{item.UserName}}</text>
+        </view>
+        <view>
+            <text>备注：</text>
+            <text>{{item.Remark}}</text>
+        </view>
+      </view>
+      <view>
+        <view>能否接收文件</view>
+        <switch checked='{{item.IsChecked}}' name="touser{{index}}"></switch>
+      </view>
+    </view>
+    <button form-type='submit'>提交</button>
+  </form>
+</view>

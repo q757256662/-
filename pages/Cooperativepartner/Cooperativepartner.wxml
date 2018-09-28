@@ -1,0 +1,24 @@
+<!--pages/Cooperativepartner/Cooperativepartner.wxml-->
+<view class="container partner_box">
+  <navigator class="partner" url="../iSendWho/iSendWho" hover-class="navigator-hover">
+    <view>
+      <image src="../../images/upload1.png" class="icon"></image>
+      <text>我发给谁</text>
+    </view>
+    <image class="icon" src="../../images/right.png"></image>
+  </navigator>
+  <navigator class="partner" url="../whoAddedMe/whoAddedMe">
+    <view>
+      <image src="../../images/download1.png" class="icon"></image>
+      <text>谁发给我</text>
+    </view>
+    <image class="icon" src="../../images/right.png"></image>
+  </navigator>
+  <navigator class="partner" url="../findCompany/FindCompany">
+    <view>
+      <image src="../../images/search1.png" class="icon"></image>
+      <text>寻找伙伴</text>
+    </view>
+    <image class="icon" src="../../images/right.png"></image>
+  </navigator>
+</view>

@@ -1,0 +1,55 @@
+<!--pages/iSendWho/iSendWho.wxml-->
+<view class="container">
+  <view class="search_box">
+    <view class="picker_group">  
+      <picker mode="date" value="{{listQuery.sTime}}" end="{{listQuery.eTime}}" bindchange="bindDateChange">  
+        <view class="picker">  
+          {{listQuery.sTime}}  
+        </view>  
+      </picker>  
+      至  
+      <picker mode="date" value="{{listQuery.eTime}}" start="{{listQuery.sTime}}" bindchange="bindDateChange2">  
+        <view class="picker">  
+          {{listQuery.eTime}}  
+        </view>  
+      </picker>        
+    </view>  
+    <!-- <button class="search_button" size="mini" >获取该时间的外发文件</button> -->
+  </view>
+  <view class="company_box">
+    <view class="company_show" wx:for="{{userList}}" wx:key="{{item.CompanyId}}">
+      <view class="company_name">
+        <view style="font-weight:bold;font-size:30rpx">
+          <text>公司名称：</text>
+          <text>{{item.CompanyName}}</text>
+        </view> 
+      </view>
+      <view class="company_view">
+        <view class="company_base">
+        <view>
+          <text>地址：</text>
+          <text>{{item.Address}}</text>
+        </view>
+        <view>
+          <text>文件：</text>
+          <text>{{item.FileNum}}</text>
+        </view>
+      </view>
+      <view class="company_setting">
+        <view>
+          <text>加密等级：</text>
+          <text>{{item.Level==0?'加密':'普通'}}</text>
+        </view>
+        <view>
+          <text>合作状态：</text>
+          <text>{{item.State==1?'启动':'禁用'}}</text>
+        </view>
+      </view>
+      <view>
+        <image class="icon icon_btn" src="../../images/green_edit.png" bindtap='handleToSet' data-item="{{item}}"  data-index="{{index}}"></image>
+      </view>
+      </view>
+      
+    </view>  
+  </view>
+</view>

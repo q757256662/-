@@ -1,0 +1,25 @@
+<!--pages/addUser/addUser.wxml-->
+<view class="container">
+  <form bindsubmit='handleAdd'>
+    <view class="attr_box">
+      <view class="username">
+        <image class="icon" src="../../images/user.png"></image>
+        <text>用户名</text>
+        <input class="input_box" name="UserName" focus="{{true}}"></input>
+      </view>
+      <view class="username">
+        <image class="icon" src="../../images/phone.png"></image>
+        <text>手机号</text>
+        <input class="input_box" name="Phone" maxlength="11"></input>
+      </view>
+      <view class="username">
+        <image class="icon" src="../../images/dialogue.png"></image>
+        <text decode="{{true}}">备&emsp;注</text>
+        <input class="input_box" name="Remark"></input>
+      </view>
+    </view>
+    <view class="setting_box">
+      <button form-type='submit'>确定</button>
+    </view>
+  </form>
+</view>

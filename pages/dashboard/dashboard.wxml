@@ -1,0 +1,47 @@
+<!--pages/dashboard/dashboard.wxml-->
+<view class="container">
+  <form class="box" bindsubmit='handleSubmit'>
+    <view class="user_detail">
+      <image src='{{userInfo.avatarUrl}}'></image>
+      <text>{{userInfo.nickName}}</text>
+    </view>
+    <view class="attr_box">
+      <view class="username">
+        <image class="icon" src="../../images/company.png"></image>
+        <label>公司名称</label>
+        <input class="input_box" value="{{userForm.CompanyName}}" name="CompanyName" disabled='{{!currentState}}'></input>
+      </view>
+      <view class="username">
+        <image class="icon" src="../../images/user.png"></image>
+        <label>用户名称</label>
+        <input class="input_box" value="{{userForm.UserName}}" name="UserName" disabled='{{!currentState}}' bindblur='checkUserName'></input>
+      </view>
+      <view class="username">
+        <image class="icon" src="../../images/phone.png"></image>
+        <label>手机号码</label>
+        <input class="input_box" value="{{userForm.Phone}}" name="Phone" disabled='{{!currentState}}' bindblur='checkPhone' maxlength="11"></input>
+      </view>
+      <view class="username">
+        <image class="icon" src="../../images/password.png"></image>
+        <label>用户密码</label>
+        <input class="input_box" value="{{userForm.UserPwd}}" name="UserPwd" disabled='{{!currentState}}'></input>
+      </view>
+      <view class="username">
+        <image class="icon" src="../../images/invite.png"></image>
+        <label>当前状态</label>
+        <switch wx:if="{{currentState}}" name="State" checked="{{userForm.State==1?1:0}}"></switch>
+        <text wx:else>{{userForm.State?'启用':'禁用'}}</text>
+      </view>
+      <view class="username">
+        <image class="icon" src="../../images/dialogue.png"></image>
+        <label>接收短信</label>
+        <switch wx:if="{{currentState}}" name="ReadSM" checked="{{userForm.ReadSM==1?1:0}}"></switch>
+        <text wx:else>{{userForm.ReadSM?'是':'否'}}</text>
+      </view>
+    </view>
+    <view class="setting_box">
+      <button type="warn" wx:if="{{!currentState}}" bindtap='editMode'>编辑</button>
+      <button wx:else form-type='submit'>确定</button>
+    </view>
+  </form>
+</view>
