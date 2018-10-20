@@ -1,0 +1,29 @@
+/* pages/statistics/statistics.wxss */
+page{
+  background:#eee;
+  width:100%;
+}
+
+
+.partner{
+  background:#fff;
+  display: flex;
+  height:100rpx;
+  margin-top:30rpx;
+  width:100%;
+  padding:50rpx;
+  align-items: center;
+  font-weight: 700;
+  font-size:32rpx;
+  justify-content: space-between;
+  /* border:1px solid #ddd; */
+  border-radius: 10rpx;
+}
+
+.partner text{
+  margin-left:30rpx;
+}
+
+navigator view text{
+  line-height: 40rpx;
+}

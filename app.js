@@ -11,8 +11,9 @@ App({
     // 服务器地址
     // ServerURL: "http://localhost:63154"
     // ServerURL: "http://192.168.3.222:1111/"
-    ServerURL: "https://app.etsystem.cn"
-    //ServerURL: "https://api.autopai.cn"
+    // ServerURL: "http://192.168.3.18:1111"
+    // ServerURL: "http://192.168.3.184:8089/"
+    ServerURL: "https://app.etsystem.cn/"
   },
   onLaunch: function() {
     // 展示本地存储能力

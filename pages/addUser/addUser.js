@@ -82,16 +82,17 @@ Page({
     }
     // console.log(obj)
     if (obj.Phone.length != 11 || obj.UserName == "" ) {
-      if (obj.Phone.length != 11){
-        wx.showModal({
-          content: '手机号必须为11位',
-          showCancel: false
-        })
-      }else{
+      if (obj.UserName == ""){
         wx.showModal({
           content: '请输入用户名或者手机号',
           showCancel: false
         })
+      }else{
+        wx.showModal({
+          content: '手机号必须为11位',
+          showCancel: false
+        })
+        
       }
       
     } else {

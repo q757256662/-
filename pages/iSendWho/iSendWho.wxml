@@ -2,13 +2,13 @@
 <view class="container">
   <view class="search_box">
     <view class="picker_group">  
-      <picker mode="date" value="{{listQuery.sTime}}" end="{{listQuery.eTime}}" bindchange="bindDateChange">  
+      <picker mode="date" value="{{listQuery.sTime}}" end="{{listQuery.eTime}}" bindchange="bindDateChange" fields="day">  
         <view class="picker">  
           {{listQuery.sTime}}  
         </view>  
       </picker>  
       至  
-      <picker mode="date" value="{{listQuery.eTime}}" start="{{listQuery.sTime}}" bindchange="bindDateChange2">  
+      <picker mode="date" value="{{listQuery.eTime}}" start="{{listQuery.sTime}}" bindchange="bindDateChange2" fields="day">  
         <view class="picker">  
           {{listQuery.eTime}}  
         </view>  

@@ -166,5 +166,33 @@ Page({
     this.setData({
       pwd
     })
+  },
+  getpwd:function(e) {
+    if (this.data.phone.trim().length != 11)
+    {
+      wx.showModal({
+        content: '手机号必须为11位',
+        showCancel: false
+      })
+    }
+    else
+    {
+      http.header.Authorization = ""
+      http.getReq('forgetpassword?phone=' + this.data.phone, res => {
+        wx.hideLoading()
+        if (res.status == 200) {
+          wx.showModal({
+            content: res.tip,
+            showCancel: false
+          })
+        } else {
+          wx.showModal({
+            content: res.error,
+            showCancel: false
+          })
+        }
+      })
+    }
+
   }
 })

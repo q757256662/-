@@ -11,7 +11,8 @@ Page({
   data: {
     userMsg:{},
     reg:true,
-    index:null
+    index:null,
+    detail:null
   },
 
   /**
@@ -20,7 +21,17 @@ Page({
   onLoad(options){
     // console.log(options)
     this.page(options)
-
+    var phone = wx.getSystemInfoSync();  //调用方法获取机型
+    var that = this;
+    if (phone.platform == 'ios') {
+      that.setData({
+        detail: true
+      });
+    } else if (phone.platform == 'android') {
+      that.setData({
+        detail: false
+      });
+    }
   },
 
   /**

@@ -8,17 +8,21 @@
       <view class="body_input">
         <view class="wx_phone_login">
           <!-- <text class="iconfont icon-user"></text> -->
-          <image class="icon" src="../../images/user.png"></image>
+          <image class="icon" src="../../images/user.png" mode="aspectFit"></image>
           <text>手机号</text>
           <input placeholder='请输入你的手机号' name="username" bindinput='handleInputUser' maxlength="11" ></input>
         </view>
         <view class="wx_password_login">
-          <image class="icon" src="../../images/password.png"></image>
+          <image class="icon" src="../../images/password.png" mode="aspectFit"></image>
           <text decode="{{true}}">密&emsp;码</text>
           <input placeholder='请输入你的密码' name="password" password='true' bindinput='handleInputUpwd'></input>
         </view>
-      </view>
+        <!-- <view class="wx_forgetpwd">
+          <label catchtap="getpwd">忘记密码</label>
+        </view> -->
+      </view>      
       <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class="login_button">授权登录</button>
+      <view catchtap="getpwd" class="wx_forgetpwd">忘记密码</view>
     </view>
   </view>
 </view>

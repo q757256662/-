@@ -120,7 +120,7 @@ Page({
     obj.touser = touser
     let totalObj = this.data.userState
     if (canReceiver == "") {
-      canReceiver = "所有员工"
+      canReceiver = "所有员工,"
     }
     canReceiver = canReceiver.slice(0, -1)
     // console.log("能打开文件的员工"+canReceiver)

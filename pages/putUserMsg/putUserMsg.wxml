@@ -6,10 +6,6 @@
       <input class="input_box" value="{{userMsg.UserName}}" name="UserName" bindblur='checkUserName'></input>
     </view>
     <view class="username">
-      <label>备注:</label>
-      <input class="input_box" value="{{userMsg.Remark}}" name="Remark"></input>
-    </view>
-    <view class="username">
       <label>手机:</label>
       <input class="input_box" value="{{userMsg.Phone}}" name="Phone" bindblur='checkPhone' maxlength="11"></input>
     </view>
@@ -28,6 +24,11 @@
     <view class="username">
       <label>下载权限</label>
       <switch checked="{{userMsg.Down==0?false:true}}" name="Down"></switch>
+    </view>
+    <view class="username">
+      
+      <!-- <textarea class="input_box_last" value="{{userMsg.Remark}}" name="Remark"></textarea> -->
+      <view class="Remark_box"><label>备注:</label><textarea value="{{userMsg.Remark}}" name="Remark"></textarea></view>
     </view>
     <button form-type='submit'>确定</button>
   </form>

@@ -1,0 +1,17 @@
+<!--pages/statistics/statistics.wxml-->
+<view class="container partner_box">
+  <navigator class="partner" url="../uploadStatis/uploadStatis" hover-class="navigator-hover">
+    <view>
+      <image src="../../images/upload1.png" class="icon"></image>
+      <text>上传统计</text>
+    </view>
+    <image class="icon" src="../../images/right.png"></image>
+  </navigator>
+  <navigator class="partner" url="../downStatis/index">
+    <view>
+      <image src="../../images/download1.png" class="icon"></image>
+      <text>下载统计</text>
+    </view>
+    <image class="icon" src="../../images/right.png"></image>
+  </navigator>
+</view>

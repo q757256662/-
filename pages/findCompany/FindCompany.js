@@ -11,6 +11,7 @@ Page({
   data: {
     userList: [],
     listQuery: '',
+    hasCompany:false
   },
 
   /**
@@ -70,18 +71,16 @@ Page({
   },
   handleFilter() {
     let KeyWord = this.data.listQuery
-    var key = ["服饰", "服装", "时装", "设计", "制衣", "针织", "纺织", "箱包", "手袋", "制品", "内衣", "体育", "休闲", "运动", "实业", "贸易", "国际", "集团", "有限", "公司", "(", "（", "[", "区", "县", "市", "省"];
-    key.map(el => {
-      if (KeyWord.indexOf(el) != -1) {
-        KeyWord = KeyWord.replace(el, "");
-      }
-    })
-    if (KeyWord.trim().length >= 4) {
+    if (KeyWord.trim().length >= 2) {
       this.page();
     } else {
       wx.showToast({
-        title: '关键词不足',
+        title: '有效关键词不足',
         image: '../../images/error.png',
+      })
+      this.setData({
+        userList:[],
+        hasCompany:false
       })
     }
     // this.page()
@@ -91,13 +90,22 @@ Page({
       title: '加载中',
     })
     http.header.Authorization = 'Bearer ' + app.globalData.token
-    http.getReq('partner?query='+this.data.listQuery, res => {
+    http.getReq('partner?query='+this.data.listQuery.trim(), res => {
       wx.hideLoading()
       if (res.status == 200) {
         this.setData({
           userList: res.data.rows,
           total: res.data.total
         })
+        if(res.data.rows.length==0){
+          this.setData({
+            hasCompany:false
+          })
+        }else{
+          this.setData({
+            hasCompany: true
+          })
+        }
       } else {
         wx.showToast({
           title: res.tip

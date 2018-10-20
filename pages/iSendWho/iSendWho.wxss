@@ -73,6 +73,7 @@ page{
   border: 1px solid #20AA39;
   border-radius: 30rpx;
   text-align: center;
+  overflow:hidden;
 }
 
 .icon_btn {

@@ -81,7 +81,7 @@ Page({
       form.ReadSM ? form.ReadSM = 1 : form.ReadSM = 0
       if (form.State==0){
         form.Phone = ""
-        foirm.MAC = ""
+        form.MAC = ""
       }
       this.setData({
         userFrom:form

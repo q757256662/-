@@ -10,10 +10,12 @@ Page({
   data: {
     listQuery:{
       page: 1,
-      limit: 10
+      limit: 20
     },
+    User: null,
     userList:[],
-    hasMore:true
+    hasMore:true,
+    hasUser:true
   },
 
   /**
@@ -51,7 +53,7 @@ Page({
   onHide: function () {
     let obj = {
       page: 1,
-      limit: 10
+      limit: 20
     }
     this.setData({
       listQuery:obj,
@@ -73,13 +75,45 @@ Page({
   onPullDownRefresh: function () {
     let obj = {
       page: 1,
-      limit: 10
+      limit: 20
     }
     this.setData({
       listQuery: obj,
       hasMore: true
     })
-    this.page()
+    // console.log(this.data.listQuery)
+    if (!this.data.User){
+      this.page()
+    }else{
+      http.getReq('staffmanager/SearchUser?User=' + this.data.User, res => {
+        // console.log(res)
+        let userList = res.data.rows
+        let total = res.data.total
+        if (total == 0) {
+          this.setData({
+            hasUser: false
+          })
+        } else {
+          this.setData({
+            hasUser: true
+          })
+        }
+        this.setData({
+          userList,
+          total
+        })
+        if (res.data.total <= 20) {
+          this.setData({
+            hasMore: false
+          })
+        }
+        if (res.data.total <= 20 * this.data.listQuery.page) {
+          this.setData({
+            hasMore: false
+          })
+        }
+      })
+    }
     wx.stopPullDownRefresh()    
   },
 
@@ -118,7 +152,16 @@ Page({
         this.setData({
           userList:res.data.rows
         })
-        if(res.data.total<=10){
+        if(res.data.total==0){
+          this.setData({
+            hasUser:false
+          })
+        }else{
+          this.setData({
+            hasUser: true
+          })
+        }
+        if(res.data.total<=20){
           this.setData({
             hasMore: false
           })
@@ -139,12 +182,7 @@ Page({
     })
   },
   handleNextPage(count){
-    // wx.showLoading({
-    //   title: '加载中',
-    // })
-    // var that = this
-    http.getReq('staffmanager?page=' + count + '&limit=' + this.data.listQuery.limit + '&name=' + this.data.listQuery.name, res => {
-      // console.log(res.data.rows)
+    http.getReq('staffmanager?page=' + count + '&limit=' + this.data.listQuery.limit + '&name=' + this.data.listQuery.name +'&ordertype=0&isasc=false', res => {
       let arr = this.data.userList
       res.data.rows.map(el=>{
         arr.push(el)
@@ -153,7 +191,7 @@ Page({
       this.setData({
         userList:arr
       })
-      if (res.data.total <= 10 * this.data.listQuery.page){
+      if (res.data.total <= 20 * this.data.listQuery.page){
         this.setData({
           hasMore:false
         })
@@ -163,24 +201,49 @@ Page({
   handleSearch(e){
     let obj = {}
     obj.User = e.detail.value;
-    http.getReq('staffmanager/SearchUser?User=' + obj.User,res=>{
-      console.log(res)
-      let userList = res.data.rows
-      let total = res.data.total
+    if(!obj.User){
+      let obj = {
+        page: 1,
+        limit: 20
+      }
       this.setData({
-        userList,
-        total
+        listQuery: obj,
+        User:null,
+        hasMore: true
       })
-      if (res.data.total <= 10) {
+      this.page()
+    }else{
+      http.getReq('staffmanager/SearchUser?User=' + obj.User, res => {
+        // console.log(res)
+        let userList = res.data.rows
+        let total = res.data.total
         this.setData({
-          hasMore: false
+          User: obj.User
         })
-      }
-      if (res.data.total <= 10 * this.data.listQuery.page) {
+        if (total==0){
+          this.setData({
+            hasUser:false
+          })
+        }else{
+          this.setData({
+            hasUser: true
+          })
+        }
         this.setData({
-          hasMore: false
+          userList,
+          total
         })
-      }
-    })
+        if (res.data.total <= 20) {
+          this.setData({
+            hasMore: false
+          })
+        }
+        if (res.data.total <= 20 * this.data.listQuery.page) {
+          this.setData({
+            hasMore: false
+          })
+        }
+      })
+    }
   }
 })

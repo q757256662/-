@@ -4,7 +4,7 @@
   background:#fff;
   border-radius: 30rpx;
   padding:20rpx;
-  height:80vh;
+  height:100%;
 }
 .user{
   display: flex;
