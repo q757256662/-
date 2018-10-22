@@ -16,7 +16,8 @@ Page({
       Stime: "",
       Etime: "",
     },
-    hasMore:true
+    hasMore:true,
+    hasUser:true
   },
 
   /**
@@ -130,6 +131,15 @@ Page({
         if (res.data.total <= 10) {
           this.setData({
             hasMore: false
+          })
+        }
+        if (res.data.total==0){
+          this.setData({
+            hasUser:false
+          })
+        }else{
+          this.setData({
+            hasUser: true
           })
         }
       } else {

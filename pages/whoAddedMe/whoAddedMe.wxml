@@ -1,6 +1,6 @@
 <!--pages/whoAddedMe/whoAddedMe.wxml-->
 <view class="container">
-  <scroll-view class="company_box">
+  <scroll-view class="company_box" wx:if="{{hasUser}}">
     <view class="company_detali" wx:for="{{userList}}" wx:key="{{item.CompanyId}}">
       <view>
         <view class="company_name" style="font-weight:bold;font-size:30rpx">
@@ -21,4 +21,8 @@
       </view>
     </view>
   </scroll-view>
+  <view wx:else class="noUser">
+      <image src="../../images/no_order.png" mode="aspectFit"></image>
+      <text>抱歉,暂无公司信息</text>
+  </view>
 </view>

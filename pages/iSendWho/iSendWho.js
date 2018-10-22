@@ -17,7 +17,8 @@ Page({
     },
     userList:[],
     total:0,
-    hasMore:true
+    hasMore:true,
+    hasUser:true
   },
 
   /**
@@ -110,6 +111,15 @@ Page({
             hasMore: false
           })
         }
+        if (res.data.total==0){
+          this.setData({
+            hasUser:false
+          })
+        }else{
+          this.setData({
+            hasUser: true
+          })
+        }
       }else{
         wx.showToast({
           title: res.tip
@@ -154,6 +164,15 @@ Page({
         if (res.data.total <= 10) {
           this.setData({
             hasMore: false
+          })
+        }
+        if (res.data.total==0){
+          this.setData({
+            hasUser:false
+          })
+        }else{
+          this.setData({
+            hasUser: true
           })
         }
       }
