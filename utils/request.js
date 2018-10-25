@@ -85,11 +85,38 @@ function putReq(url, data, cb) {
       return typeof cb == "function" && cb(false)
     }
   })
+}
 
+function delReq(url, data, cb) {
+  wx.showLoading({
+    title: '加载中',
+  })
+  // console.log("header=="),
+  //   console.log(header),
+  wx.request({
+    url: rootDocment + url,
+    header: header,
+    data: data,
+    method: 'delete',
+    success: function (res) {
+      wx.hideLoading();
+      return typeof cb == "function" && cb(res.data)
+    },
+    fail: function () {
+      wx.hideLoading();
+      wx.showModal({
+        title: '网络错误',
+        content: '网络出错，请刷新重试',
+        showCancel: false
+      })
+      return typeof cb == "function" && cb(false)
+    }
+  })
 }
 module.exports = {
   getReq: getReq,
   postReq: postReq,
   header: header,
-  putReq: putReq
+  putReq: putReq,
+  delReq: delReq
 }  

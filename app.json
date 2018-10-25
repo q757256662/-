@@ -15,7 +15,9 @@
     "pages/out/out",
     "pages/downStatis/index",
     "pages/statistics/statistics",
-    "pages/uploadStatis/uploadStatis"
+    "pages/uploadStatis/uploadStatis",
+    "pages/acceptMessage/acceptMessage",
+    "pages/openMessage/openMessage"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -44,7 +46,6 @@
         "pagePath": "pages/userManager/userManager",
         "text": "员工管理"
       },
-      
       {
         "iconPath": "./images/accout.png",
         "selectedIconPath": "./images/accout1.png",

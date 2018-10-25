@@ -6,22 +6,22 @@ App({
     userInfo: null,
     token: "", 
     msg : "", 
+    // imgAddress:"http://file.etsystem.cn",
+    imgAddress:"http://fwq2012:8083/",
     // 是否绑定手机
     IsBindPhone: false,
     // 服务器地址
     // ServerURL: "http://localhost:63154"
-    // ServerURL: "http://192.168.3.222:1111/"
+    ServerURL: "http://192.168.3.222:1111/"
     // ServerURL: "http://192.168.3.18:1111"
     // ServerURL: "http://192.168.3.184:8089/"
-    ServerURL: "https://app.etsystem.cn/"
+    // ServerURL: "https://app.etsystem.cn/"
   },
   onLaunch: function() {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
-
   },
 
   getUserInfo(cb,fn,userInfoRes,getphone,getpwd) {
@@ -75,7 +75,6 @@ App({
                     // console.log(json.data);
                   }
                 })
-
                 // 敏感信息解密
                 wx.request({
                   url: that.globalData.ServerURL + '/WeiXinOpen/DecodeEncryptedData',

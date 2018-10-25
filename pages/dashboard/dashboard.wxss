@@ -73,3 +73,22 @@ input{
   display: inline-block;
   vertical-align: center;
 }
+
+.queryMsg{
+  /* display: flex; */
+  /* justify-content: space-between; */
+}
+
+.queryMsg text{
+  display: block;
+  width:50rpx;
+  height:30rpx;
+  border:1px solid red;
+  margin-left:40rpx;
+  border-radius: 20rpx;
+  background: red;
+  text-align: center;
+  line-height: 30rpx;
+  color:#fff;
+  font-size:23rpx;
+}

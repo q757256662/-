@@ -1,0 +1,27 @@
+<!--pages/acceptMessage/acceptMessage.wxml-->
+<view class="container">
+  <view class="msg_lists" wx:if="{{hasUser}}">
+    <!-- <view class="msg_list" wx:for="{{list}}" bindtap='handleClick' data-Item="{{item}}" data-index="{{index}}" wx:key="{{index}}"> -->
+    <view class="msg_list" wx:for="{{list}}">
+      <view>
+        <view>
+          <text>
+            {{item.Title}}
+          </text>
+        </view>
+        <view>
+          <text>
+            时间:{{item.CreateTime}}
+          </text>
+        </view>
+      </view>
+      <view>
+        <button catchtap="handleClick" data-index="{{index}}" data-Item="{{item}}" size="mini">查看</button>
+      </view>
+    </view>
+  </view>
+  <view wx:else class="noUser">
+      <image src="../../images/no_order.png" mode="aspectFit"></image>
+      <text>暂无信息</text>
+  </view>
+</view>

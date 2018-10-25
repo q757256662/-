@@ -22,7 +22,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(){
-    this.page()
+    // this.page()
   },
 
   /**
@@ -36,7 +36,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    // this.showMsg()
+    this.page()
   },
 
   /**
@@ -142,5 +143,29 @@ Page({
         reg: true
       })
     }
-  }
+  },
+  // showMsg(){
+  //   http.header.Authorization = 'Bearer ' + app.globalData.token
+  //   http.getReq('Messages?page=1&limit=10', res => {
+  //     if (res.Count !== 0) {
+  //       this.setData({
+  //         isPoint: true,
+  //         pointNumber: res.Count
+  //       })
+  //       wx.setTabBarBadge({
+  //         index: 3,
+  //         text: String(res.Count)
+  //       })
+  //     } else {
+  //       this.setData({
+  //         isPoint: false,
+  //         pointNumber: res.Count
+  //       })
+  //     }
+  //     // this.setData({
+  //     //   list: res.MessagesList
+  //     // })
+  //     // console.log(util.formatTime(new Date(this.data.list.CreateTime)))
+  //   })
+  // }
 })
