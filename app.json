@@ -1,7 +1,6 @@
 {
   "pages": [
     "pages/login/login",
-    "pages/test/test",
     "pages/dashboard/dashboard",
     "pages/acceptUploadState/acceptUploadState",
     "pages/setUploadState/setUploadState",

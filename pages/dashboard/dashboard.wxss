@@ -74,13 +74,9 @@ input{
   vertical-align: center;
 }
 
-.queryMsg{
-  /* display: flex; */
-  /* justify-content: space-between; */
-}
 
 .queryMsg text{
-  display: block;
+  display: inline-block;
   width:50rpx;
   height:30rpx;
   border:1px solid red;

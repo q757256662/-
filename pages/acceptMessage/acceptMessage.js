@@ -1,6 +1,7 @@
 // pages/acceptMessage/acceptMessage.js
 var app = getApp()
 var http = require('../../utils/request.js')
+var util = require('../../utils/util.js')
 Page({
 
   /**
@@ -21,6 +22,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.page(this.data.pageCount)
   },
 
   /**
@@ -34,7 +36,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.page(this.data.pageCount)
   },
 
   /**
@@ -95,8 +96,9 @@ Page({
     http.header.Authorization = 'Bearer ' + app.globalData.token
     http.getReq('Messages?page='+e.page+'&limit='+e.limit, res => {
       res.MessagesList.map(el=>{
-        el.CreateTime = el.CreateTime.replace("T"," ")
-        el.CreateTime = el.CreateTime.substring(0,19)
+        // el.CreateTime = el.CreateTime.util("T"," ")
+        el.CreateTime = util.formatTimeS(new Date(el.CreateTime))
+        // el.CreateTime = el.CreateTime.substring(0,19)
       })
       this.setData({
         list: res.MessagesList,
@@ -124,15 +126,15 @@ Page({
     let item = e.currentTarget.dataset.item
     // item.Contents = this.dotran(item.Contents)
     // console.log(item)
-    item.Contents = item.Contents.replace(/"/g,"\\\"")
+    // item.Contents = item.Contents.replace(/"/g,"\\\"")
     let query = JSON.stringify(item)
     // console.log(query)
     let index = JSON.stringify(e.currentTarget.dataset.index)
       // = e.currentTarget.dataset.item.Contents.query.replace(/"/g, "\\\"")
     // console.log(query)
-    
+    console.log(item)
     wx.navigateTo({
-      url: '../openMessage/openMessage?index=' + (Number(index)+1),
+      url: '../openMessage/openMessage?id=' + item.IMCID + '&IMID='+item.IMID,
     })
     let list = [...this.data.list]
     list.splice(e.currentTarget.dataset, 1)

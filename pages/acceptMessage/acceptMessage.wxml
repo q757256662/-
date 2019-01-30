@@ -16,7 +16,7 @@
         </view>
       </view>
       <view>
-        <button catchtap="handleClick" data-index="{{index}}" data-Item="{{item}}" size="mini">查看</button>
+        <button catchtap="handleClick" data-index="{{index}}" data-Item="{{item}}" size="mini" type="{{item.State==1?'default':''}}">{{item.State==1?"已读":"查看"}}</button>
       </view>
     </view>
   </view>

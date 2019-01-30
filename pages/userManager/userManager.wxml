@@ -5,7 +5,6 @@
     <image class="icon" src="../../images/search.png" mode="aspectFit"></image>
     <input placeholder='请输入查询的员工名或者手机号' bindblur='handleSearch'></input>
   </view>
-  <!-- 123123123123 -->
   <scroll-view class="list_box">
     <navigator class="add_user" url="../addUser/addUser">
       <image class="icon" src="../../images/ADD.png" mode="aspectFit"></image>

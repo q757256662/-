@@ -110,8 +110,8 @@ Page({
   },
   bindGetUserInfo: function (e) {
     var that = this
-    if ( !this.data.pwd && this.data.phone.length!==11){
-      if (this.data.phone !== 11){
+    if ( !this.data.pwd && this.data.phone.length==11){
+      if (this.data.phone.length !== 11){
         wx.showModal({
           content: '手机号必须为11位',
           showCancel: false
@@ -128,6 +128,7 @@ Page({
       // 调用应用实例的方法获取全局数据
       app.getUserInfo((userInfo) => {
         //更新数据
+        console.log(userInfo)
         that.setData({
           userInfo
         })

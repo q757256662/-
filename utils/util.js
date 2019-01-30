@@ -15,6 +15,17 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+const formatTimeS = date => {
+  const year = date.getFullYear()
+  const month = date.getMonth() + 1
+  const day = date.getDate()
+  const hour = date.getHours()
+  const minute = date.getMinutes()
+  const second = date.getSeconds()
+  return [year, month, day].map(formatNumber).join('-') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+  // return [year, month, day].map(formatNumber).join('-')
+}
+
 var checkToken = ()=>{
   if (app.token == '') {
     wx.redirectTo({
@@ -29,5 +40,6 @@ var checkToken = ()=>{
 
 module.exports = {
   formatTime: formatTime,
-  checkToken: checkToken
+  checkToken: checkToken,
+  formatTimeS
 }

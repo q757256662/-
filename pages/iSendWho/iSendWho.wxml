@@ -54,6 +54,6 @@
   </view>
   <view wx:else class="noUser">
       <image src="../../images/no_order.png" mode="aspectFit"></image>
-      <text>抱歉,暂无公司信息</text>
+      <text>暂无公司信息</text>
   </view>
 </view>

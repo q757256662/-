@@ -15,7 +15,8 @@ Page({
     },
     userInfo:null,
     currentState : false,
-    reg:true
+    reg:true,
+    url:"pages/dashboard/dashboard"
   },
 
   /**
@@ -61,6 +62,8 @@ Page({
         userInfo: app.globalData.userInfo
       })
     })
+    // this.showPoint()
+    
     wx.stopPullDownRefresh()
   },
   page(){
@@ -70,6 +73,7 @@ Page({
         userForm: res.data.rows,
         userInfo: app.globalData.userInfo
       })
+      this.showPoint()
     })
   },
   editMode(){
@@ -144,28 +148,25 @@ Page({
       })
     }
   },
-  // showMsg(){
-  //   http.header.Authorization = 'Bearer ' + app.globalData.token
-  //   http.getReq('Messages?page=1&limit=10', res => {
-  //     if (res.Count !== 0) {
-  //       this.setData({
-  //         isPoint: true,
-  //         pointNumber: res.Count
-  //       })
-  //       wx.setTabBarBadge({
-  //         index: 3,
-  //         text: String(res.Count)
-  //       })
-  //     } else {
-  //       this.setData({
-  //         isPoint: false,
-  //         pointNumber: res.Count
-  //       })
-  //     }
-  //     // this.setData({
-  //     //   list: res.MessagesList
-  //     // })
-  //     // console.log(util.formatTime(new Date(this.data.list.CreateTime)))
-  //   })
-  // }
+  showPoint(){
+    if (this.data.userForm.MessageCount!==0){
+      wx.setTabBarBadge({
+        index: 3,
+        text: String(this.data.userForm.MessageCount)
+      })
+    }else{
+      wx.removeTabBarBadge({
+        index: 3
+      })
+    }
+    
+  },
+  onShareAppMessage: function () {
+    wx.updateShareMenu({
+      success(res) {
+        console.log(res)
+       }
+    })
+    }
+  
 })

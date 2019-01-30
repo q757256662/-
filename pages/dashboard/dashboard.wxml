@@ -32,16 +32,15 @@
         <switch wx:if="{{currentState}}" name="ReadSM" checked="{{userForm.ReadSM==1?1:0}}"></switch>
         <text wx:else>{{userForm.ReadSM?'是':'否'}}</text>
       </view>
-      <navigator url="../acceptMessage/acceptMessage">
+      <!-- <navigator url="../acceptMessage/acceptMessage">
         <view class="username queryMsg">
-          <!-- <label>查看信息</label> -->
           <view>
             <image class="icon" src="{{userForm.MessageCount!==0?'../../images/form1.png':'../../images/form.png'}}" mode="aspectFit"></image>
             我的消息
           </view>
-            <text wx:if="{{userForm.MessageCount!==0}}">{{userForm.MessageCount}}</text>
+          <text style="{{userForm.MessageCount!==0?'':'color:#000;background:none;border:none;text-align: left;'}}">{{userForm.MessageCount}}</text>
         </view>
-      </navigator>
+      </navigator> -->
     </view>
     <view class="setting_box">
       <button type="warn" wx:if="{{!currentState}}" bindtap='editMode'>编辑</button>
