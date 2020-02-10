@@ -1,0 +1,94 @@
+/* pages/putUserMsg/putUserMsg.wxss */
+
+.setting_box{
+  width:100%;
+  background:#fff;
+  border-radius: 30rpx;
+  padding:20rpx;
+  /* height:80vh; */
+}
+
+page{
+  background:#f1f0f5;
+}
+
+.container{
+  background:#f1f0f5;
+  padding:30rpx 40rpx 0;
+}
+
+.username{
+  display: flex;
+  border-bottom:1px solid #eee;
+  height:40px;
+  line-height: 40px;
+  margin-top:10px;
+  align-items: center;
+}
+
+.username label{
+  color:#000;
+  width:100rpx;
+  vertical-align: center;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.submitButton{
+  display: block;
+  margin-top:50rpx;
+}
+
+.backToUp{
+  color:#fff;
+}
+
+
+.Remark_box textarea{
+  /* border:1px solid red; */
+  text-align: start;
+}
+
+.accecpReg{
+  display: flex;
+  align-items: center;
+}
+
+.accecpReg button{
+  height:60rpx;
+  line-height: 60rpx;
+  vertical-align: middle;
+}
+
+.header_logo{
+  height: 300rpx;
+}
+
+.accecpReg view{
+  border:1px solid #F0A986;
+  height: 100%;
+  padding:0 10px;
+  color: #F0A986;
+  background: #fff;
+  position: relative;
+  left: 40px;
+}
+
+.accecpReg view:active{
+  background: #8F5A3C;
+  color:#fff;
+}
+
+.myModal{
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  color: #000;
+  border:1px solid #ccc;
+  padding:25rpx;
+  border-radius: 5rpx;
+}
+
+.myModal image{
+  vertical-align: middle;
+}

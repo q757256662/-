@@ -73,7 +73,7 @@ Page({
         userForm: res.data.rows,
         userInfo: app.globalData.userInfo
       })
-      this.showPoint()
+      // this.showPoint()
     })
   },
   editMode(){

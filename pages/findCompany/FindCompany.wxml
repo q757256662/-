@@ -2,7 +2,7 @@
 <view class="container">
   <view class="search_company">
     <image class="icon" src="../../images/search.png"></image>
-    <input placeholder='请输入公司名、地址关键字或锁号' bindinput='handleInput' bindblur='handleFilter'></input>
+    <input placeholder='请输入公司名、地址关键字、员工手机或锁号' bindinput='handleInput' bindblur='handleFilter'></input>
   </view>
     <view class="companies_box">
       <view wx:if="{{hasCompany}}">

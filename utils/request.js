@@ -1,10 +1,14 @@
 var app = getApp()
 var rootDocment = app.globalData.ServerURL
 // var rootDocment = 'http://fwq2012:8081/ETWebApi/';
+
+let cookie = wx.getStorageSync('cookieKey');
 var header = {
   'Accept': 'application/json',
   'content-type': 'application/json',
   'Authorization': 'Bearer '+app.globalData.token,
+  "Cookie" : cookie
+
 }
 function getReq(url, cb) {
   wx.showLoading({
@@ -15,10 +19,39 @@ function getReq(url, cb) {
   wx.request({
     url: rootDocment + url,
     method: 'get',
+    crossDomain: true,
+    header: header,
+    success: function (res) {
+      header.Cookie = cookie;
+      wx.hideLoading();
+      return typeof cb == "function" && cb(res.data)
+    },
+    fail: function () {
+      wx.hideLoading();
+      wx.showModal({
+        title: '网络错误',
+        content: '网络出错，请刷新重试',
+        showCancel: false
+      })
+      return typeof cb == "function" && cb(false)
+    }
+  })
+}
+
+function getReqHeader(url, cb) {
+  wx.showLoading({
+    title: '加载中',
+  })
+  // console.log("header=="),
+  //   console.log(header)
+  wx.request({
+    url: rootDocment + url,
+    method: 'get',
+    crossDomain: true,
     header: header,
     success: function (res) {
       wx.hideLoading();
-      return typeof cb == "function" && cb(res.data)
+      return typeof cb == "function" && cb(res)
     },
     fail: function () {
       wx.hideLoading();
@@ -118,5 +151,6 @@ module.exports = {
   postReq: postReq,
   header: header,
   putReq: putReq,
-  delReq: delReq
+  delReq: delReq,
+  getReqHeader: getReqHeader
 }  

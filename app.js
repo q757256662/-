@@ -9,7 +9,10 @@ App({
     // 是否绑定手机
     IsBindPhone: false,
     // 服务器地址
-    ServerURL: "https://app.etsystem.cn/"
+    // ServerURL: "https://app.etsystem.cn/"
+
+    ServerURL: "http://192.168.3.18:1111/"
+    // ServerURL: "http://192.168.3.184:1111/"
   },
   onLaunch: function() {
     // 展示本地存储能力
